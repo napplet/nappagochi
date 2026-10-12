@@ -77,3 +77,7 @@ directory and must never use a real identity or a key controlling funds.
 ## License
 
 [MIT](LICENSE)
+
+## Optional controller compatibility
+
+This non-normative guidance defers to the living [NAP-GAMEPAD proposal](https://github.com/napplet/naps/pull/108). Nappagochi keeps its existing pointer and keyboard interactions and does not require controllers. Its SDK/Paja dependency ranges accept the base and GAMEPAD releases; the runtime may expose controller input without changing identity, outbox, pet lifecycle, or posting requirements. Controller support does not grant native controller access to app code. Any future controller enhancement should check injected domain presence, respect `focused`, reset button baselines on regained focus, close its listeners, and retain the current controls. A controller button must never fabricate post or reply text.
